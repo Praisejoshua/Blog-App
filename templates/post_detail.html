@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+{% load tz %}
+
+<link rel="stylesheet" href="{% static 'details.css' %}">
+
+<div class="container mt-5">
+    <div class="post-entry bg-white p-4 rounded shadow-sm">
+        <h2 class="mb-3">{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+    </div>
+
+    <div class="mt-4">
+        <h2>Author: <a href="{% url 'profile' %}">{{ post.author }}</a></h2>
+        
+        <a href="{% url 'post_edit' post.pk %}" class="btn btn-warning">Edit Post</a>
+        <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Delete Post</a>
+        <div>
+            <h3>Comment Section</h3>
+            <div>
+                <h3>View Comment</h3>
+                {% for comment in comments %}
+                <div class="comment-meta">
+                    <strong>{{ comment.author }}</strong>
+                    on 
+                    {% timezone "Africa/Lagos" %}
+                    {{ comment.created_at }}
+                    {% endtimezone %}
+                </div>
+                <p> {{ comment.content }} </p>
+                {% empty %}
+                <p>No comments yet.....</p>
+                {% endfor %}
+            </div>
+            <div>
+                <h3>Add a comment</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Add Comment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.post-list {
+    margin-top: 2rem;
+}
+
+.post-entry {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-entry h2 a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.post-entry h2 a:hover {
+    text-decoration: underline;
+}
+
+.add-post {
+    text-align: center;
+    margin-top: 2rem;
+}
